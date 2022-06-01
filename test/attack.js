@@ -1,5 +1,5 @@
 const { ethers } = require("hardhat")
-const { expect } = require("chai")
+const { expect, assert } = require("chai")
 
 const usernameBytes = ethers.utils.formatBytes32String("test");
 const passwordBytes = ethers.utils.formatBytes32String("password");
@@ -23,7 +23,7 @@ describe("Attack", async () => {
         console.log(ethers.utils.parseBytes32String(slot1Bytes))
 
         // Confirm the the data received from the slots are the same
-        expect(ethers.utils.parseBytes32String(slot0Bytes)).to.equal("test")
+        assert.equal(ethers.utils.parseBytes32String(slot0Bytes), "test")
         expect(ethers.utils.parseBytes32String(slot1Bytes)).to.equal("password")
     })
 })
