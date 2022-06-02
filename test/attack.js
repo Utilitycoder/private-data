@@ -23,7 +23,7 @@ describe("Attack", async () => {
         console.log(ethers.utils.parseBytes32String(slot1Bytes))
 
         // Confirm the the data received from the slots are the same
-        assert.equal(ethers.utils.parseBytes32String(slot0Bytes), "test")
+        assert.equal(ethers.utils.parseBytes32String(slot0Bytes),"test")
         expect(ethers.utils.parseBytes32String(slot1Bytes)).to.equal("password")
     })
 })
